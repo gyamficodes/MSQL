@@ -34,5 +34,5 @@ VALUES
 
 SELECT * FROM users;
 
-
+DROP  TABLE  Users;
 
