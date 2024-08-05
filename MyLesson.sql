@@ -85,3 +85,52 @@ SELECT * FROM users WHERE age < 30 OR age > 70;
 
 ---between
 SELECT * FROM users WHERE age BETWEEN 40 AND 50;
+
+
+
+----- In
+SELECT  * FROM users 
+-- WHERE age IN (20,30,34);
+WHERE first_name IN ("jane", "olivia");
+
+
+----case statement
+SELECT first_name, age,
+       CASE 
+         WHEN age < 18 THEN 'A kid'
+         WHEN age >= 18 AND age <= 30 THEN 'Young'
+         ELSE 'Old Man'
+       END AS users_group
+FROM users;
+
+
+
+
+--- Unique mean one data can not have the same value;
+
+CREATE TABLE Series(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) UNIQUE,
+    release_year INT,
+    genre VARCHAR(255)
+)
+
+INSERT INTO series(title, release_year,genre)
+VALUES("Power Rangers",2024,"Adventure") 
+      ("Vampires Diarries", 2016, "Fantasy");
+
+SELECT * FROM series;
+
+CREATE TABLE employeer(
+    em_id int AUTO_INCREMENT PRIMARY KEY,
+    emp_name VARCHAR(255),
+    emp_age INT CHECK (emp_age >= 18 AND emp_age < 60 ),
+    emp_salary DECIMAL
+)
+
+
+
+
+
+
+
