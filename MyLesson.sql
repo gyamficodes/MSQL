@@ -219,3 +219,37 @@ VALUES("Ragea","From nigerial",1)
 SELECT * FROM job CROSS JOIN musician;
 
 
+
+---INNER JOIN
+-- SELECT * FROM musician INNER JOIN job ON  musician.dev_id = job.dev_id;
+
+-- left Join
+SELECT * FROM musician LEFT JOIN job On musician.dev_id = job.dev_id;
+
+--right-john
+SELECT *
+FROM musician RIGHT JOIN job On musician.dev_id = job.dev_id;
+
+--Many-To-Many Relation
+
+CREATE TABLE Movies (
+    movie_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    title VARCHAR(100) NOT NULL,
+    year INT NOT NULL,
+    director VARCHAR(100) NOT NULL,
+    genre VARCHAR(100)
+);
+
+INSERT INTO Movies(movie_id, title, year, director, genre)
+ VALUES(),
+
+
+
+CREATE TABLE Person (
+    person_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    age INT,
+    email VARCHAR(100),
+    genre VARCHAR(100),
+    country VARCHAR(100)
+)
